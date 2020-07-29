@@ -1,29 +1,24 @@
-#include <iostream>
-#include <cctype>
-#include <cstring>
-using namespace std;
-
-struct node{
-	int data;
-	node *next;
-};
-
-
-class table{
-
-	public:
-		table(int size = 5);
-		~table();
-		int hash(char *key) const;
-		int insert(int data);
-		int display(char *key);
-		int removeByMeal(char *mealName);
-	
-	private:
-		node ** hashTable;
-		int hashTableSize;
-
-
-
-
-};
+using namespace std; 
+  
+class Hash 
+{ 
+    int BUCKET;    
+  
+    
+    list<int> *table; 
+public: 
+    Hash(int V);  
+  
+    
+    void insertItem(int x); 
+  
+    
+    void deleteItem(int key); 
+  
+    
+    int hashFunction(int x) { 
+        return (x % BUCKET); 
+    } 
+  
+    void displayHash(); 
+}; 
